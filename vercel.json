@@ -1,13 +1,31 @@
 {
-	"builds": [{
-		"src": "hospitalmanagement/wsgi.py"
-		"use": "@vercel/python"
-		"config": { "maxLambdaSize": "15mb", "runtime": "python3.9"}
-	}],
+	"version": 2,
+	"builds": [
+	  {
+		"src": "manage.py",
+		"use": "@vercel/python",
+		"config": { "maxLambdaSize": "50mb" }
+	  },
+	  {
+		"src": "staticfiles/**",
+		"use": "@vercel/static"
+	  }
+	],
 	"routes": [
-	    {
+	  {
+		"src": "/static/(.*)",
+		"dest": "/staticfiles/$1"
+	  },
+	  {
 		"src": "/(.*)",
-		"dest": "hospitalmanagement/wsgi.py"
-	    }
-	]
+		"dest": "/manage.py"
+	  }
+	],
+	"env": {
+	  "DJANGO_SETTINGS_MODULE": "hospitalmanagement.settings",
+	  "SECRET_KEY": "django-insecure-waogr$_^(6$pbbr5zq5wpejz87$(igf@5^^p6pon1_hgcpxtu#",
+	  "DEBUG": "True",
+	  "ALLOWED_HOSTS": ".vercel.app"
+	}
 }
+  
