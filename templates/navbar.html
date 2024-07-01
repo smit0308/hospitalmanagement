@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <style>
+        /* Include the updated CSS here */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: #f2f5f7;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+ul { 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0025;
+    display: flex;
+    justify-content: center;
+    padding: .75rem;
+    border-radius: 0;
+    box-shadow: 0 10px 50px 0 rgba(#bebec5, .25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+li + li {
+    margin-left: .75rem;
+}
+
+a {
+    color: #FFF; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+a:hover, a:focus, a.active {
+    background-color: #30305a;
+    outline: 0;
+}
+
+a span {
+    position: absolute;
+    background-color: #30305a;
+    white-space: nowrap;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+    transition: .15s ease;
+}
+
+a:hover span, a:focus span {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+a span:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: #30305a;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-radius: 3px;
+}
+
+details {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    margin-top: 2rem;
+    color: #05043e; 
+    display: flex;
+    flex-direction: column;
+}
+
+details div {
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(#000, 0.15);
+    padding: 1.25rem;
+    border-radius: 8px;
+    position: absolute;
+    max-height: calc(100vh - 100px);
+    width: 400px;
+    max-width: calc(100vw - 2rem);
+    bottom: calc(100% + 1rem);
+    right: 0;
+    overflow: auto;
+    transform-origin: 100% 100%;
+}
+
+details div::-webkit-scrollbar {
+    width: 15px;
+    background-color:#fff;
+}
+
+details div::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 99em;
+    background-color: #ccc;
+    border: 5px solid #fff;
+}
+
+details div > * + * {
+    margin-top: 0.75em;
+}
+
+details p > code {
+    font-size: 1rem;
+    font-family: monospace;
+    color: #185adb;
+    font-weight: 600;
+}
+
+details pre {
+    white-space: pre-line;
+    background-color: #f9f9f9;
+    border: 1px solid #95a3b9;
+    border-radius: 6px;
+    font-family: monospace;
+    padding: 0.75em;
+    font-size: 0.875rem;
+}
+
+details[open] div {
+    animation: scale 0.25s ease;
+}
+
+summary {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding: 0.625em 1.25em .625em 1.25em;
+    border-radius: 99em;
+    color: #fff;
+    background-color: #185adb;
+    box-shadow: 0 5px 15px rgba(#000, 0.1);
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.15s ease;
+    position: relative;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:hover,
+summary:focus {
+    background-color: mix(#000, #185adb, 20%);
+}
+
+summary i {
+    font-size: 1.375em;
+    margin-left: .25em;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">
+                <i class="ai-home"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="ai-image"></i>
+                <span>Images</span>
+            </a>
+        </li>	
+        <li>
+            <a href="#">
+                <i class="ai-file"></i>
+                <span>Files</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="ai-game-controller"></i>
+                <span>Games</span>
+            </a>
+        </li>	
+        <li>
+            <a href="#">
+                <i class="ai-book-open"></i>
+                <span>Books</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="ai-bell"></i>
+                <span>Notifications</span>
+            </a>
+        </li>
+        <li>	
+            <a href="#">
+                <i class="ai-gear"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="ai-person"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+    </ul>
+    
+    <details>
+        <summary>How it works<i class="ai-question-fill"></i></summary>
+        <div>
+            <p>Inside each <code>&lt;a&gt;</code> element there's a hidden (using transform and opacity) <code>&lt;span&gt;</code> containing the text. Like this: </p>
+            <p><pre><code>a span { 
+    &nbsp;position: absolute;
+    &nbsp;left: calc(100% + 1.5rem); //Moves it all the way to the right
+    &nbsp;
+    &nbsp;opacity: 0;
+    &nbsp;transform: scale(0);
+    &nbsp;transform-origin: center left;
+    &nbsp;transition: .15s ease;
+    }</code></pre> </p>
+            <p>On hover or focus this span becomes visible through a transition of both transform and opacity. Like this:</p>
+            <p><pre><code>a:hover span, a:focus span { 
+    &nbsp;opacity: 1;
+    &nbsp;transform: scale(1);
+    }</code></pre> </p>
+            <p>The <code>&lt;span&gt;</code> also has a psuedo-element in the shape of a rectangle, but rotated 45 degrees to make it look like a triangle. See the code for more details.</p>
+        </div>
+    </details>
+</body>
+</html>

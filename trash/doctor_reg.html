@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/jquery-ui/jquery-ui.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'registration.css' %}">
+</head>
+<body>
+<!-- <form method="post" > -->
+    {% csrf_token %}
+        <div class="main">
+
+        <section class="signup">
+            <!-- <img src="{% static 'images/signup-bg.jpg' %}" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" action="{% url 'doctor_registration' %}"class="signup-form">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First name</label>
+                                <input type="text" class="form-input" name="first_name" value="{{ staff.first_name }}" id="first_name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last name</label>
+                                <input type="text" class="form-input" name="last_name" value="{{ staff.last_name }}" id="last_name" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-icon">
+                                <label for="birth_date">Birth date</label>
+                                <input type="text" class="form-input" name="birth_date" value="{{ staff.birth_date }}" id="birth_date" placeholder="YYYY-MM-DD" />
+                            </div>
+                            <div class="form-radio">
+                                <label for="gender">Gender</label>
+                                <div class="form-flex">
+                                    <input type="radio" name="gender" value="male" id="male" checked="checked" />
+                                    <label for="male">Male</label>
+    
+                                    <input type="radio" name="gender" value="female" id="female" />
+                                    <label for="female">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_number">Phone number</label>
+                            <input type="number" class="form-input" name="phone_number" value="{{ staff.phone_number }}" id="phone_number" />
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-input" name="password" id="password" value="{{ staff.password }}" disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re_password">Repeat your password</label>
+                                <input type="password" class="form-input" name="re_password" id="re_password" disabled/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="medical_license">Medical License Number</label>
+                            <input type="text" class="form-input" name="doctor_id" value="{{ staff.medical_license }}" id="doctor_id"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization/Field of Practice</label>
+                            <input type="text" class="form-input" name="specialization" value="{{ staff.specialization }}" id="specialization"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <input type="number" class="form-input" name="experience" value="{{ staff.experience }}" id="experience"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="capacity">Capacity per Hour</label>
+                            <input type="number" class="form-input" name="capacity" value="{{ staff.capacity }}" id="capacity"/>
+                        </div>
+                        <div class="form-text">
+                            <a href="#" class="add-info-link"><i class="zmdi zmdi-chevron-right"></i>Additional info</a>
+                            <div class="add_info">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-input" name="email" value="{{ staff.email }}" id="email" disabled/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="medical_school">Medical School/Institution Attended</label>
+                                    <input type="text" class="form-input" name="medical_school" value="{{ staff.medical_school }}" id="medical_school"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="graduation_year">Year of Graduation</label>
+                                    <input type="number" class="form-input" name="graduation_year" value="{{ staff.graduation_year }}" id="graduation_year"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <div class="select-list">
+                                        <select name="country" id="country" required>
+                                            <option value="US">United State</option>
+                                            <option value="UK">CANADA</option>
+                                            <option value="VN">Viet Nam</option>
+                                            <option value="VN">India</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <div class="select-list">
+                                        <select name="city" id="city" required>
+                                            <option value="NY">NewYork</option>
+                                            <option value="IC">DELHI</option>
+                                            <option value="canada">Mumbai</option>
+                                            <option value="canada">Gandhinagar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="languages">Languages Spoken</label>
+                                    <input type="text" class="form-input" name="languages" value="{{ staff.languages }}" id="languages"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="publications">Research Publications</label>
+                                    <input type="text" class="form-input" name="publications" value="{{ staff.publications }}" id="publications"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="awards">Awards and Recognitions</label>
+                                    <input type="text" class="form-input" name="awards" value="{{ staff.awards }}" id="awards"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hobbies">Hobbies and Interests (Optional)</label>
+                                    <input type="text" class="form-input" name="hobbies" value="{{ staff.hobbies }}" id="hobbies"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="submission_date">Date of Submission</label>
+                                    <input type="text" class="form-input" name="submission_date" value="{{ staff.submission_date }}" id="submission_date" placeholder="MM-DD-YYYY"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    </form>
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'reg.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

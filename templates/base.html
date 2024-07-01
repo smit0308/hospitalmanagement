@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hospital Management System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">   
+</head>
+<body>
+    <header>
+        <div class="top-bar" >
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Street, New York, USA</span>
+                    </div>
+                    <div class="hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Fri: 09.00 AM - 09.00 PM</span>
+                    </div>
+                    <div class="contact">
+                        <i class="fas fa-phone"></i>
+                        <span>+012 345 6789</span>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="logo">
+                       <a href="{% url 'home' %}">
+                        <i class="fas fa-hospital-symbol"></i>
+                        <span>Hospital</span>
+                       </a> 
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="{% url 'home' %}">HOME</a></li>
+                        <li><a href="{% url 'about' %}">ABOUT</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">PAGES</a></li>
+                        <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                        <!-- <li><a href="app2/signup">SIGNUP</a></li> -->
+                        <!-- <li><a href="app2/loginform">LOGIN</a></li> -->
+                        
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% if user.is_superuser %}
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a href="{% url 'add_staff' %}">Add Staff</a></li>
+                            <li><a href="{% url 'staff_list' %}">Staff List</a></li>
+                            {% else %}  
+                                        {% if user.is_staff %}
+                                            <!-- {% if user.fill %}
+                                                <p>City: {{ user.fill }}</p>
+                                            {% endif %}
+                                                <p>City1: {{ user.fill }}</p> -->
+                                            <li><a href="{% url 'doctor_registration' %}">Registration Form</a></li>
+                                        {% else %}
+                                             <li><a href="{% url 'patient_registration' %}">Patient Form</a></li>
+                                        {% endif %}
+                            {% endif %}
+                        {% else %}
+                            <li><a href="{% url 'loginform' %}">Login</a></li>
+                        {% endif %}
+                    </ul>
+                    <div class="appointment">
+                        {% if not user.is_staff %}
+                        <a href="{% url 'appointment' %}">Appointment <i class="fas fa-arrow-right"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

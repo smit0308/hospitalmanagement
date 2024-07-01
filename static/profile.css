@@ -1,0 +1,21 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.profile-details {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+}

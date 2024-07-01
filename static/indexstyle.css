@@ -1,0 +1,290 @@
+
+/*===========================
+    Start Hero Area CSS
+=============================*/
+.slider {
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .single-slider {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider .single-slider .text{
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+.slider .single-slider h1 {
+    color: #2C2D3F;
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 42px;
+}
+
+.slider .single-slider h1 span{
+    color: #1a76d1;
+}
+
+.slider .single-slider p {
+    color: #2C2D3F;
+    margin-top: 27px;
+    font-weight: 400;
+}
+
+.slider .single-slider .button{
+    margin-top: 30px;
+}
+
+.slider .single-slider .btn{
+    color: #fff;
+    background: #1a76d1;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.slider .single-slider .btn:last-child{
+    margin: 0;
+}
+
+.slider .single-slider .btn.primary{
+    background: #2C2D3F;
+    color: #fff;
+}
+
+.slider .single-slider .btn.primary:before{
+    background: #1A76D1;
+}
+
+.slider .owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .owl-carousel .owl-nav div {
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    text-align: center;
+    background: #1A76D1;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.4s ease;
+}
+
+.slider .owl-carousel .owl-nav div:hover{
+    background: #2C2D3F;
+    color: #fff;
+}
+
+/* Slider Animation */
+.owl-item.active .single-slider h1{
+    animation: fadeInUp 1s both 0.6s;
+}
+
+.owl-item.active .single-slider p{
+    animation: fadeInUp 1s both 1s;
+}
+
+.owl-item.active .single-slider .button .btn{
+    animation: fadeInDown 1s both 1.5s;
+}
+
+/*===========================
+    End Hero Area CSS
+=============================*/
+
+
+/*=============================
+    Start Features CSS
+===============================*/
+.features {
+    padding-top: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.features.index2 {
+    padding-top: 100px;
+}
+.features.testimonial-page {
+    padding-top: 100px;
+}
+.features .single-feature {
+    text-align: center;
+    position: relative;
+    padding: 10px 20px;
+    flex: 1;
+    max-width: 30%;
+    box-sizing: border-box;
+}
+.features .single-feature .single-icon {
+    position: relative;
+}
+.features .single-feature .single-icon i {
+    font-size: 50px;
+    color: #1a76d1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 100%;
+    transition: all 0.4s ease;
+}
+.features .single-feature:hover .single-icon i {
+    background: #1A76D1;
+    color: #fff;
+    border-color: transparent;
+}
+.features .single-feature h3 {
+    padding-top: 128px;
+    color: #2C2D3F;
+    font-weight: 600;
+    font-size: 21px;
+}
+.features .single-feature p {
+    margin-top: 20px;
+}
+/*=============================
+    End Features CSS
+===============================*/
+
+/* Centering Section Title */
+.section-title {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-title img {
+    display: block;
+    margin: 10px auto;
+}
+
+.section-title p {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.intro {
+    margin-bottom: 50px;
+}
+
+.intro h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: #777;
+    font-size: 1em;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.service {
+    flex: 1;
+    padding: 20px;
+}
+
+.service img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.service h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #777;
+}
+
+.stats {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat {
+    flex: 1;
+    padding: 20px;
+}
+
+.stat img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.stat h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    font-size: 1em;
+}
+
+

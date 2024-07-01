@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        .header, .footer {
+            text-align: center;
+            padding: 10px;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .header .invoice-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .section p {
+            margin: 0;
+        }
+        .bill-to, .ship-to {
+            float: left;
+            width: 45%;
+            margin: 10px;
+        }
+        .details {
+            text-align: right;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .notes {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="Company Logo">
+            <h1 class="invoice-title">Medical Invoice</h1>
+        </div>
+        
+        <div class="section details">
+            <p>Invoice No: <strong>001</strong></p>
+            <p>Invoice Date: <strong>Jul 13th, 2022</strong></p>
+            <p>Due Date: <strong>Jul 13th, 2023</strong></p>
+        </div>
+        
+        <div class="section from">
+            <h2>From</h2>
+            <p>Saldo Apps</p>
+            <p>John Smith</p>
+            <p>wiz@saldoapps.com</p>
+            <p>8029697597</p>
+            <p>First str., 28-32, Chicago, USA</p>
+        </div>
+        
+        <div class="section bill-to">
+            <h2>Bill to</h2>
+            <p>{{Shepard corp.}}</p>
+            <p>shepard@mail.com</p>
+            <p>8029697597</p>
+            <p>North str., 32, Chicago, USA</p>
+        </div>
+        
+        <div class="section ship-to">
+            <h2>Ship to</h2>
+            <p>North str., 32, Chicago, USA</p>
+            <p>Track #: R08029697597</p>
+        </div>
+        
+        <div style="clear: both;"></div>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Rate, CADA</th>
+                    <th>Qty</th>
+                    <th>Tax</th>
+                    <th>Disc</th>
+                    <th>Amount, CADA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Prototype</td>
+                    <td>20,230,450.00</td>
+                    <td>2000</td>
+                    <td>20.50%</td>
+                    <td>20.50%</td>
+                    <td>20,230,450.00</td>
+                </tr>
+                <tr>
+                    <td>Prototype-based programming is a style of object-oriented programming</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Design</td>
+                    <td>20,230,450.00</td>
+                    <td>2000</td>
+                    <td>20.50%</td>
+                    <td>20.50%</td>
+                    <td>20,230,450.00</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="total">
+            <p>Subtotal: <strong>USD 8000.00</strong></p>
+            <p>Discount (20%): <strong>USD 0.00</strong></p>
+            <p>Shipping Cost: <strong>USD 0.00</strong></p>
+            <p>Sales Tax: <strong>USD 450.00</strong></p>
+            <p>Total: <strong>USD 8,480.00</strong></p>
+            <p>Amount Paid: <strong>USD 0.00</strong></p>
+            <p>Balance Due: <strong>USD 8,480.00</strong></p>
+        </div>
+        
+        <div class="section payment-instruction">
+            <h2>Payment Instruction</h2>
+            <p>Paypal email: wiz@saldoapps.com</p>
+            <p>Make checks payable to: John Smith</p>
+            <p>Bank Transfer Routing (ABA): 061120084</p>
+        </div>
+        
+        <div class="section notes">
+            <h2>Notes</h2>
+            <p>Prototype-based programming is a style of object-oriented programming in which behaviour</p>
+        </div>
+        
+        <div class="footer">
+            <p>Thank you for your business!</p>
+        </div>
+    </div>
+</body>
+</html>
