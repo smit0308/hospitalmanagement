@@ -24,7 +24,7 @@ multidict==6.0.5
 oscrypto==1.3.0
 packaging==24.1
 pillow==10.3.0
-psycopg2==2.9.9
+psycopg2-binary
 pycparser==2.22
 pyHanko==0.25.0
 pyhanko-certvalidator==0.26.3
